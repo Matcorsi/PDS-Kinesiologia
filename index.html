@@ -16,9 +16,16 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="images/pds-logo.png" alt="Logo PDS" class="logo-img">
+                <img src="images/pds-logo.png" alt="Logo PDS">
             </div>
-            <ul class="nav-links">
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#beneficios">Beneficios</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -27,15 +34,13 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
+
     <main>
+        <a href="https://walink.co/fa3ab2"><img class="flotante" src="images/whatsapp-flotante.png" alt="whatsapp"></a>
+
         <section id="inicio" class="hero">
             <div class="hero-slider">
                 <div class="hero-slide active">
@@ -63,7 +68,7 @@
                         <a href="#servicios" class="btn-primary">Ver Servicios</a>
                     </div>
                     <div class="hero-image">
-                        <img src="images/colo.png" alt="Tratamientos">
+                        <img src="images/pedro.png" alt="Tratamientos">
                     </div>
                 </div>
                 <div class="hero-slide">
@@ -75,7 +80,7 @@
                         <a href="#acerca" class="btn-primary">Conócenos</a>
                     </div>
                     <div class="hero-image">
-                        <img src="images/tuiti.png" alt="Instalaciones">
+                        <img src="images/pedro.png" alt="Instalaciones">
                     </div>
                 </div>
             </div>
@@ -242,19 +247,24 @@
             <h2 data-aos="fade-up">Contacto</h2>
             <div class="contact-grid">
                 <form id="contact-form" data-aos="fade-right">
+                    <h3>Ponte en contacto</h3>
+                    <label>Nombre</label>
                     <input type="text" id="name" placeholder="Nombre" required>
+                    <label>Email</label>
                     <input type="email" id="email" placeholder="Email" required>
+                    <label>Telefono</label>
                     <input type="tel" id="phone" placeholder="Teléfono" required>
+                    <label>Mensaje</label>
                     <textarea id="message" placeholder="Mensaje" required></textarea>
                     <button type="submit" class="btn-primary">Enviar Mensaje</button>
                 </form>
                 <div class="contact-info" data-aos="fade-left">
                     <h3>Información de Contacto</h3>
                     <p><i class="fas fa-phone"></i> +123 456 7890</p>
-                    <p><i class="fas fa-envelope"></i> info@kinesiologo.com</p>
+                    <p><i class="fas fa-envelope"></i> Pedrodesimone@kinesiologo.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> Calle Salud 123, Ciudad</p>
                     <p><i class="fas fa-clock"></i> Lunes a Viernes: 8:00 AM - 6:00 PM</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" style="border:0; flex:1;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1586.0490849720366!2d-59.13133002875835!3d-37.340184497533784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911fb762c0e169%3A0xc86ab64444b46456!2sLober%C3%ADa%20433-499%2C%20B7000%20Tandil%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1762638706899!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></iframe>
                 </div>
             </div>
         </section>
@@ -262,11 +272,11 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 Kinesiólogo Pro. Todos los derechos reservados.</p>
+            <p>&copy; Desarrollado por Matco.</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>

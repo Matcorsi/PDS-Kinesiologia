@@ -4,14 +4,70 @@ AOS.init({
     once: true,
 });
 
-// Menú hamburguesa
+// Menú hamburguesa (mejorado: enlaces, X, fuera, Escape, scroll lock)
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
+const closeBtn = document.querySelector('.close-menu'); // opcional: <div class="close-menu">×</div>
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+// Safety: si no existen, salimos (evita errores en consola)
+if (!hamburger || !navLinks) {
+  console.warn('hamburger o nav-links no encontrado');
+} else {
+  // abrir/cerrar con hamburger
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // que no active el listener global
+    toggleMenu();
+  });
+
+  // evitar que clicks dentro del menú se propaguen al document
+  navLinks.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  // cerrar al click fuera
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // cerrar al hacer click en cualquier enlace del menú
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  // cerrar con Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+  // si usás un botón X aparte
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMenu();
+    });
+  }
+
+  // helpers
+  function toggleMenu() {
+    const open = navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active', open);
+    // bloquear scroll del body cuando abierto
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
 
 // Slider del Hero
 const heroSlides = document.querySelectorAll('.hero-slide');

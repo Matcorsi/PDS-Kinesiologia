@@ -811,7 +811,6 @@ footer {
         transform: none !important;
     }
     
-
     .hero-content {
         order: 1;
         width: 100%;
@@ -840,7 +839,7 @@ footer {
     }
 
     .hero-indicators {
-        margin-top: 2rem;
+        margin-top: 5rem;
         gap: 8px;
         justify-content: center;
     }
